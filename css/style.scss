@@ -1,0 +1,585 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*,*::before,*::after{box-sizing: border-box;}
+
+// Define font style
+$text-main-color: #221E1F;
+$text-sub-color: #747474;
+$main-font-family: "Noto Sans TC";
+$pc-h1-fz: 48px;
+$pc-h1-lh: 70px;
+$pc-h2-fz: 32px;
+$pc-h2-lh: 46px;
+$pc-h3-fz: 24px;
+$pc-h3-lh: 35px;
+$pc-h4-fz: 20px;
+$pc-h4-lh: 29px;
+$pc-h5-fz: 18px;
+$pc-h5-lh: 26px;
+$pc-p-fz: 16px;
+$pc-p-lh: 24px;
+$mb-h1-fz: 32px;
+$mb-h1-lh: 46px;
+$mb-h2-fz: 28px;
+$mb-h2-lh: 40px;
+$mb-h3-fz: 24px;
+$mb-h3-lh: 24px;
+$mb-h4-fz: 18px;
+$mb-h4-lh: 26px;
+$mb-p-fz: 16px;
+$mb-p-lh: 24px;
+
+//Define color system
+$main-color: #56C4C5; //green
+$second-color: #FF5D50; //red
+
+//Define space
+$pc-block-space: 100px;
+$mb-block-space: 60px;
+$mb-item-space: 24px;
+
+//Define shadow style
+$card-shadow: 0px 2px 10px #00000014;
+
+body{ //預設
+  color: $text-main-color;
+  font-family: $main-font-family;
+  align-items: center;
+}
+
+.container{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  @media (max-width:768px){
+    max-width: 728px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.navbar{
+  position: fixed;
+  width: 100%;
+  top: 0px;
+}
+
+.navbar-inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88px;
+  .nav-logo{
+    img{
+      height: 40px;
+    }
+  }
+  .nav-btn{
+    align-items: center;
+    a{
+      display: block;
+      color: #FFFFFF;
+      padding: 12px 32px;
+      border-radius: 22px;
+      text-decoration: none;
+      background-color: $second-color;
+      font-size: 16px;
+    }
+    a:hover{
+      background-color: $main-color;
+    }
+  }
+  @media (max-width:768px){
+    height: 72px;
+    border-bottom: 2px solid #FFD153;
+    background-color: #fff;
+    .nav-logo{
+      img{
+        height: 24px;
+      }
+    }
+  }
+}
+
+.section-landing{
+  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/bg_home.svg), url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball01.svg);
+  background-repeat: no-repeat;
+  background-position: right top, -222px 85vh;
+  background-size: 62vw, 360px 360px;
+  overflow-y: visible;
+  height: 100vh;
+  @media (max-width:768px){
+    background: none;
+  }
+}
+
+.section-landing-inner{
+  padding-top: 118px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .landing-text{
+    width: 50%;
+    h5{
+      font-size: $pc-h5-fz;
+      line-height: $pc-h5-lh;
+      color: $main-color;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    h1{
+      font-size: $pc-h1-fz;
+      line-height: $pc-h1-lh;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    h4{
+      font-size: $pc-h4-fz;
+      line-height: $pc-h4-lh;
+    }
+  }
+  .landing-img{
+    width: 50%;
+  }
+  @media (max-width: 768px){
+    flex-wrap: wrap;
+    padding-top: 104px;
+    padding-bottom: 60px;
+    .landing-text{
+      width: 100%;
+      h5{
+        font-size: $mb-p-fz;
+        line-height: $mb-p-lh;
+      }
+      h1{
+        font-size: $mb-h1-fz;
+        line-height: $mb-h1-lh;
+      }
+      h4{
+        font-size: $mb-p-fz;
+        line-height: $mb-p-lh;
+        margin-bottom: 16px;
+      }
+    }
+    .landing-img{
+      width: 100%;
+      height: auto;
+      img{
+        width: 95%;
+      }
+      background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/bg_home_sm.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom;
+    }
+  }
+}
+
+.section-social-inner{
+  padding-bottom: $pc-block-space;
+  .social-title{
+    text-align: center;
+    margin-bottom: 48px;
+    h2{
+      font-size: $pc-h2-fz;
+      line-height: $pc-h2-lh;
+      font-weight: bold;
+    }
+  }
+  .social-card{
+    display: flex;
+    justify-content: space-between;
+  }
+  .social-card-item{
+    width: calc(100%/3);
+    text-align: center;
+    img{
+      width: 90px;
+      margin-bottom: 24px;
+    }
+    h3{
+      font-size: $pc-h3-fz;
+      line-height: $pc-h3-lh;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+    p{
+      font-size: $pc-p-fz;
+      line-height: $pc-p-lh;
+      color: $text-sub-color;
+    }
+  }
+  @media (max-width:768px){
+    padding-bottom: $mb-block-space;
+    background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball01.svg);
+    background-repeat: no-repeat;
+    background-size: 126px;
+    background-position: -77px 15px;
+    .social-title{
+      margin-bottom: 32px;
+      h2{
+        font-size: $mb-h2-fz;
+        line-height: $mb-h2-lh;
+      }
+    }
+    .social-card{
+      flex-wrap: wrap;
+    }
+    .social-card-item{
+      width: 100%;
+      img{
+        width: 60px;
+        margin-bottom: 16px;
+      }
+      h3{
+        font-size: $mb-h4-fz;
+        line-height: $mb-h4-lh;
+        margin-bottom: 16px;
+      }
+      p{
+        font-size: $mb-p-fz;
+        line-height: $mb-p-lh;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+.section-character-inner{
+  padding-bottom: $pc-block-space;
+  .character-text{
+    margin-bottom: 48px;
+    text-align: center;
+    h2{
+      font-size: $pc-h2-fz;
+      line-height: $pc-h2-lh;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    h4{
+      font-size: $pc-h4-fz;
+      line-height: $pc-h4-lh;
+    }
+  }
+  .character-card{
+    display: flex;
+    margin-right: -8px;
+    margin-left: -8px;
+  }
+  .character-card-item{
+    width: calc(100%/4 - 16px);
+    margin: 0 8px;
+    border-radius: 12px;
+    box-shadow: $card-shadow;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 24px;
+    background-color: #fff;
+    .card-img{
+      width: 100%;
+      height: auto;
+    }
+    p{
+      font-size: $pc-p-fz;
+      line-height: $pc-p-lh;
+    }
+    .title{
+      color: $main-color;
+      font-weight: bold;
+      margin: 16px 0;
+    }
+  }
+  @media (max-width: 768px){
+    padding-bottom: $mb-block-space;
+    .character-text{
+      h2{
+        font-size: $mb-h2-fz;
+        line-height: $mb-h2-lh;
+      }
+      h4{
+        font-size: $mb-h4-fz;
+        line-height: $mb-h4-lh;
+        margin-bottom: 32px;
+      }
+    }
+    .character-card{
+      margin-bottom: -$mb-item-space;
+      flex-wrap: wrap;
+    }
+    .character-card-item{
+      width: calc(100%/2 - 16px);
+      margin-bottom: $mb-item-space;
+    }
+  }
+  @media (max-width:576px){
+    .character-card-item{
+      width: calc(100% - 16px);
+      margin-right: 38px;
+      margin-left: 38px;
+    }
+  }
+}
+
+.section-function-inner{
+  padding-bottom: $pc-block-space;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .card-list{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card-list-item{
+    width: calc(100%/2 - 47px);
+    max-width: 230px;
+    margin-right: 47px;
+    margin-bottom: 28px;
+    box-shadow: $card-shadow;
+    border-radius: 12px;
+    padding: 32px 32px 48px 32px;
+    .icon{
+      width: 86px;
+      height: 86px;
+      border-radius: 43px;
+      background-repeat: no-repeat;
+      background-size: 55%;
+      background-position: center;
+      box-shadow: $card-shadow;
+      margin-bottom: 24px;
+    }
+    h5{
+      font-size: $pc-h5-fz;
+      line-height: $pc-h5-lh;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    p{
+      font-size: $pc-p-fz;
+      line-height: $pc-p-lh;
+    }
+  }
+  .function-text{
+    width: 40%;
+    //padding-left: 90px;
+    h2{
+      font-size: $pc-h2-fz;
+      line-height: $pc-h2-lh;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    h5{
+      font-size: $pc-h5-fz;
+      line-height: $pc-h5-lh;
+      margin-bottom: 24px;
+    }
+    a{
+      display: block;
+      width: 136px;
+      height: 49px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background-color: $main-color;
+      font-size: $pc-h5-fz;
+      line-height: 49px;
+      border-radius: 27px;
+      &:hover{
+        background-color: $second-color;
+      }
+    }
+  }
+  @media (max-width: 768px){
+    flex-wrap: wrap-reverse;
+    .function-text{
+      width: 100%;
+      text-align: center;
+      margin-bottom: 32px;
+      h2{
+        font-size: $mb-h2-fz;
+        line-height: $mb-h2-lh;
+      }
+      h5{
+        font-size: $mb-p-fz;
+        line-height: $mb-p-lh;
+        margin-bottom: 16px;
+      }
+      a{
+        margin: 0 auto;
+      }
+    }
+    .card-list{
+      width: 100%;
+      justify-content: center;
+    }
+    .card-list-item{
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+  }
+  @media (max-width: 576px){
+    padding-bottom: $mb-block-space;
+    .card-list-item{
+      width: 100%;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.section-comment-inner{
+  margin-bottom: $pc-block-space;
+  .comment-text{
+    font-size: $pc-h2-fz;
+    line-height: $pc-h2-lh;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 104px;
+  }
+  .comment-card{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+  .comment-card-item{
+    position: relative;
+    width: calc(100%/3 - 16px);
+    box-shadow: $card-shadow;
+    border-radius: 12px;
+    padding: 48px 32px 24px 32px;
+    margin-left: 8px;
+    margin-right: 8px;
+    .card-img{
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      top: -56px;
+      border-radius: 40px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .line{
+      height: 1px;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      background-color: #DDDDDD;
+    }
+    p{
+      font-size: $pc-p-fz;
+      line-height: $pc-p-lh;
+    }
+    .company-name{
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .company-info{
+      display: flex;
+      justify-content: space-between;
+      .rating{
+        display: flex;
+        align-items: center;
+      }
+      img{
+       height: 16px;
+       margin-left: 8px;
+      }
+    }
+  }
+  @media (max-width: 768px){
+    margin-bottom: $mb-block-space;
+    .comment-text{
+      font-size: $mb-h2-fz;
+      line-height: $mb-h2-lh;
+      margin-bottom: 88px;
+    }
+    .comment-card-item{
+      width: calc(100% - 16px);
+    }
+  }
+}
+
+.section-footer{
+  position: relative;
+  height: 503px;
+  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/home_footer.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center 0;
+  .footer-content{
+    position: relative;
+    top: 260px;
+  }
+  h1{
+    font-size: 32px;
+    line-height: 46px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  a{
+    display: block;
+    margin: 0 auto;
+    width: 136px;
+    height: 49px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: $main-color;
+    font-size: $pc-h5-fz;
+    line-height: 49px;
+    border-radius: 27px;
+    &:hover{
+      background-color: $second-color;
+    }
+  }
+}
