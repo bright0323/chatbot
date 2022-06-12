@@ -49,10 +49,11 @@ table {
 
 *,*::before,*::after{box-sizing: border-box;}
 
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap&subset=chinese-traditional');
+
 // Define font style
 $text-main-color: #221E1F;
 $text-sub-color: #747474;
-$main-font-family: "Noto Sans TC";
 $pc-h1-fz: 48px;
 $pc-h1-lh: 70px;
 $pc-h2-fz: 32px;
@@ -90,7 +91,7 @@ $card-shadow: 0px 2px 10px #00000014;
 
 body{ //預設
   color: $text-main-color;
-  font-family: $main-font-family;
+  font-family: 'Noto Sans TC', sans-serif;
   align-items: center;
 }
 

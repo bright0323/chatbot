@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap&subset=chinese-traditional");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -59,7 +60,7 @@ table {
 
 body {
   color: #221E1F;
-  font-family: "Noto Sans TC";
+  font-family: 'Noto Sans TC', sans-serif;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
